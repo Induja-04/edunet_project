@@ -94,7 +94,7 @@ y_pred = model.predict(X)
 accuracy = round(accuracy_score(y, y_pred) * 100, 2)
 precision = round(precision_score(y, y_pred, average='macro') * 100, 2)
 default = X.iloc[0]
-fertilizer_image = "https://www.gardendesign.com/pictures/images/900x705Max/site_3/applying-fertilizer-blue-trowel-fertilizing-tomato-plant-shutterstock-com_15275.jpg"
+fertilizer_image = "edunet/fert.jpg"
 
 # Recommendation logic
 def recommend_fertilizer(pH, N, P, K, OM, SM, PMR, PHI):
@@ -131,7 +131,7 @@ def show_prediction_block(values):
         st.markdown(f"- {r}")
 
 if st.session_state.page == "home":
-    st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Phoenix-Fantasy.svg/800px-Phoenix-Fantasy.svg.png", width=120)
+    st.image("edunet/fert.jpg", width=120)
     st.markdown(f"<h1 style='text-align:center;'>{t['title']}</h1>", unsafe_allow_html=True)
     st.image(fertilizer_image, caption="Applying fertilizer to tomato plant 🌱", use_container_width=True)
 
@@ -281,3 +281,4 @@ elif st.session_state.page == "manual":
 
 
     st.markdown('</div>', unsafe_allow_html=True)
+
