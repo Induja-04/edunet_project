@@ -83,7 +83,7 @@ if "page" not in st.session_state:
     st.session_state.page = "home"
 
 # Load data
-data = pd.read_csv(r"C:\Users\Ayaz\Documents\edunet\fertilizer_ph_data.csv")
+data = pd.read_csv(r"edunet/fertilizer_ph_data.csv")
 le = LabelEncoder()
 data['Toxicity'] = le.fit_transform(data['Toxicity'])
 X = data.drop('Toxicity', axis=1)
@@ -278,5 +278,6 @@ elif st.session_state.page == "manual":
             manual_OM, manual_SM, manual_PMR, manual_PHI
         ]
         show_prediction_block(values)
+
 
     st.markdown('</div>', unsafe_allow_html=True)
